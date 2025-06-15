@@ -17,7 +17,7 @@ const features = [
   {
     icon: <FaTools size={28} />,
     title: 'Workspace Interaction',
-    desc: 'Embed tools like Google Docs & Figma. Click an agent’s desk to see what they’re doing or give instructions.',
+    desc: "Embed tools like Google Docs & Figma. Click an agent's desk to see what they're doing or give instructions.",
   },
   {
     icon: <FaPlayCircle size={28} />,
