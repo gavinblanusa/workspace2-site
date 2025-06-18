@@ -7,7 +7,17 @@ import { createClient } from '@supabase/supabase-js';
 // exception and caused the site to render a blank page. By switching to
 // `import.meta.env` we ensure the values are replaced at build time.
 
-const supabaseUrl = import.meta.env.VITE_SUPABASE_URL || '';
-const supabaseAnonKey = import.meta.env.VITE_SUPABASE_ANON_KEY || '';
+// Support both the `VITE_` and `NEXT_PUBLIC_` prefixes so the project works
+// whether the variables are defined in a Vite-style `.env` file or in a
+// Vercel environment configured for Next.js. Vite only exposes variables with
+// prefixes listed in `envPrefix` (see `vite.config.ts`).
+const supabaseUrl =
+  import.meta.env.VITE_SUPABASE_URL ||
+  import.meta.env.NEXT_PUBLIC_SUPABASE_URL ||
+  '';
+const supabaseAnonKey =
+  import.meta.env.VITE_SUPABASE_ANON_KEY ||
+  import.meta.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ||
+  '';
 
 export const supabase = createClient(supabaseUrl, supabaseAnonKey);
