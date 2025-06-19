@@ -19,3 +19,4 @@ To enable waitlist submissions through Supabase, set the following variables in 
 VITE_SUPABASE_URL=<your-supabase-url>
 VITE_SUPABASE_ANON_KEY=<your-supabase-anon-key>
 ```
+
