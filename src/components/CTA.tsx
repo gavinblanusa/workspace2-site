@@ -10,6 +10,12 @@ export default function CTA() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
+    if (!supabase) {
+      console.error('Supabase client not initialized. Skipping submission.');
+      setSubmitted(true);
+      return;
+    }
+
     const { error } = await supabase.from('waitlist').insert([{ email }]);
 
     if (error) {
