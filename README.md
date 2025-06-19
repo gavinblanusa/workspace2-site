@@ -19,14 +19,3 @@ To enable waitlist submissions through Supabase, set the following variables in 
 VITE_SUPABASE_URL=<your-supabase-url>
 VITE_SUPABASE_ANON_KEY=<your-supabase-anon-key>
 ```
-
-If these are not provided, the site will still render but submissions will be skipped.
-
-## Production build
-
-To create an optimized build and preview it locally:
-
-```bash
-npm run build
-npm run preview
-```
